@@ -1,0 +1,38 @@
+name: Rust and prompt regressions
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Test library, CLI, local HTTP adapter and offline pipeline
+        run: cargo test --all-targets
+      - name: Lint
+        run: cargo clippy --all-targets
+      - name: Validate example suite
+        run: cargo run -- validate
+      - name: Baseline
+        run: cargo run -- run --version v1 --out runs/v1
+      - name: Candidate
+        run: cargo run -- run --version v2 --out runs/v2
+      - name: Regression gate
+        run: cargo run -- compare --baseline runs/v1/run.json --candidate runs/v2/run.json --out runs/comparison
+      - name: Upload evaluation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompttestkit-reports-${{ matrix.os }}
+          path: runs/
+          if-no-files-found: ignore

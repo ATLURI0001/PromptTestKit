@@ -1,0 +1,6 @@
+{
+  "billing": "{\"intent\":\"billing\",\"priority\":\"normal\"}",
+  "outage": "{\"intent\":\"technical\",\"priority\":\"urgent\"}",
+  "injection": "{\"intent\":\"other\",\"priority\":\"normal\"}",
+  "unicode": "{\"intent\":\"billing\",\"priority\":\"normal\"}"
+}

@@ -1,0 +1,2 @@
+Explain the customer's problem in prose. Do not output JSON.
+Customer: {{message}}

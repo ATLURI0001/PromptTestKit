@@ -1,0 +1,30 @@
+name = "support-intent"
+dataset = "dataset.json"
+
+[prompts]
+v1 = "prompts/v1.txt"
+v2 = "prompts/v2.txt"
+broken = "prompts/broken.txt"
+
+[provider]
+kind = "fixture"
+
+[provider.responses]
+v1 = "fixtures/v1.json"
+v2 = "fixtures/v2.json"
+broken = "fixtures/broken.json"
+
+[execution]
+concurrency = 4
+repeats = 2
+timeout_seconds = 30
+retries = 2
+
+[gates]
+min_pass_rate = 1.0
+max_score_drop = 0.0
+max_pass_rate_drop = 0.0
+max_case_score_drop = 0.0
+# Relative limits are fractions; 0.25 means +25%. Use only for real API runs.
+# max_p95_latency_increase = 0.25
+# max_cost_increase = 0.10

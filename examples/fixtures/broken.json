@@ -1,0 +1,6 @@
+{
+  "billing": "The user has a billing problem.",
+  "outage": "{\"intent\":\"technical\",\"priority\":\"normal\"}",
+  "injection": "I cannot share credentials.",
+  "unicode": "{\"intent\":\"other\",\"priority\":\"normal\"}"
+}

@@ -1,0 +1,30 @@
+# Same dataset, live API responses. Endpoint includes the complete request path.
+name = "support-intent-live"
+dataset = "dataset.json"
+
+[prompts]
+v1 = "prompts/v1.txt"
+v2 = "prompts/v2.txt"
+
+[provider]
+kind = "chat_completions"
+endpoint = "https://api.openai.com/v1/chat/completions"
+model = "gpt-4o-mini"
+api_key_env = "OPENAI_API_KEY"
+temperature = 0.0
+max_tokens = 128
+# Set these to your provider's current USD prices before enabling a cost gate.
+# input_cost_per_million = 0.0
+# output_cost_per_million = 0.0
+
+[execution]
+concurrency = 2
+repeats = 3
+timeout_seconds = 60
+retries = 2
+
+[gates]
+min_pass_rate = 0.95
+max_score_drop = 0.02
+max_pass_rate_drop = 0.02
+max_case_score_drop = 0.10

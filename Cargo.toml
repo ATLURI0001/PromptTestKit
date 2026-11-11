@@ -1,0 +1,26 @@
+[package]
+name = "prompttestkit"
+version = "0.1.0"
+edition = "2021"
+description = "Evaluation infrastructure for prompt evolution—versioned test suites, assertion-driven scoring, and granular regression gates that turn behavioral changes into auditable release decisions."
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+futures = "0.3"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time", "net", "io-util"] }
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+strip = true

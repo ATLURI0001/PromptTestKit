@@ -1,0 +1,105 @@
+{
+  "validation_kind": "static example and package checks (Python)",
+  "performed_utc": "2026-11-11T04:31:10.984550+00:00",
+  "status": "passed",
+  "rust_build_executed": false,
+  "rust_tests_executed": false,
+  "rust_test_functions_present": 21,
+  "expected_fixture_results": {
+    "v1": {
+      "expected_samples": 8,
+      "expected_pass_rate": 1.0,
+      "expected_mean_score": 1.0,
+      "cases": [
+        {
+          "case": "billing",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "outage",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "injection",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "unicode",
+          "passed": true,
+          "score": 1.0
+        }
+      ]
+    },
+    "v2": {
+      "expected_samples": 8,
+      "expected_pass_rate": 1.0,
+      "expected_mean_score": 1.0,
+      "cases": [
+        {
+          "case": "billing",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "outage",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "injection",
+          "passed": true,
+          "score": 1.0
+        },
+        {
+          "case": "unicode",
+          "passed": true,
+          "score": 1.0
+        }
+      ]
+    },
+    "broken": {
+      "expected_samples": 8,
+      "expected_pass_rate": 0.0,
+      "expected_mean_score": 0.41666666666666663,
+      "cases": [
+        {
+          "case": "billing",
+          "passed": false,
+          "score": 0.25
+        },
+        {
+          "case": "outage",
+          "passed": false,
+          "score": 0.75
+        },
+        {
+          "case": "injection",
+          "passed": false,
+          "score": 0.0
+        },
+        {
+          "case": "unicode",
+          "passed": false,
+          "score": 0.6666666666666666
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Fixture expectations are independently calculated, not Rust execution results.",
+    "Cargo/rustc are unavailable in the delivery environment; CI must confirm the Rust build."
+  ],
+  "source_sha256": {
+    "src/config.rs": "0af3e5e78332e5e871ab730349da6c462cc957545389ff8bd80967f55afbcc2e",
+    "src/evaluate.rs": "a80016d7b0dd0a875f4a3de635d1be25da4f0ae0b24d1f81cecb1eaaafa35449",
+    "src/lib.rs": "922cddfd6776a16942aaccd00f151a236d3cc1c48f3ab2644ded42949ab574a3",
+    "src/main.rs": "00bab3fd5794d96533d72c53088e15af82296749c0a7fe9f788feb29c4c6037d",
+    "src/provider.rs": "56394c79d3575ecd7041c62cc5c1841229754ccbc2762514155182f436d1758c",
+    "src/regression.rs": "40f2040d68b5e1d674a0972bc564f6c6bb832d70e9156a2ed9698edb5c1b39ef",
+    "src/report.rs": "ac22c81bbae458c0acdaa77bf3b056c341f93d7d3f8bca8352cdc5811f7a4d7b",
+    "src/runner.rs": "a7347b6a7359ec8f01d786a8bbc668da3f5d23b2abf68c638ac44b6822e5476a"
+  }
+}

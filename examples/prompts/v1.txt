@@ -1,0 +1,4 @@
+Classify this customer message. Return only a JSON object with intent
+(billing, technical, other) and priority (normal, urgent).
+A production outage is urgent. All other messages are normal.
+Message: {{message}}
